@@ -48,4 +48,10 @@ const AdminSchema = new mongoose.Schema({
   role: { type: String, enum: ["Admin"], default: "Admin" },
 });
 
-export { userSchema, customerSchema, DeliveryPartnerSchema, AdminSchema };
+// Initialize models
+const User = mongoose.model("User", userSchema);
+const Customer = mongoose.model("Customer", customerSchema);
+const DeliveryPartner = mongoose.model("DeliveryPartner", DeliveryPartnerSchema);
+const Admin = mongoose.model("Admin", AdminSchema);
+
+export { User, Customer, DeliveryPartner, Admin };
